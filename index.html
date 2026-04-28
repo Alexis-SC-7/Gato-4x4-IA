@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gato 4x4 - Minimax vs Alfa-Beta</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="game-section">
+            <h1>Gato 4x4 Inteligente</h1>
+            <p class="subtitle">Objetivo: Conecta 4 fichas en línea</p>
+            
+            <div id="board" class="board">
+                <div class="cell" data-index="0"></div>
+                <div class="cell" data-index="1"></div>
+                <div class="cell" data-index="2"></div>
+                <div class="cell" data-index="3"></div>
+                <div class="cell" data-index="4"></div>
+                <div class="cell" data-index="5"></div>
+                <div class="cell" data-index="6"></div>
+                <div class="cell" data-index="7"></div>
+                <div class="cell" data-index="8"></div>
+                <div class="cell" data-index="9"></div>
+                <div class="cell" data-index="10"></div>
+                <div class="cell" data-index="11"></div>
+                <div class="cell" data-index="12"></div>
+                <div class="cell" data-index="13"></div>
+                <div class="cell" data-index="14"></div>
+                <div class="cell" data-index="15"></div>
+            </div>
+            
+            <button id="restart-btn" class="btn">Reiniciar Partida</button>
+        </div>
+
+        <div class="stats-section">
+            <h2>Rendimiento de la IA</h2>
+            <div class="status-box" id="turn-indicator">
+                Turno actual: <strong>Humano (X)</strong>
+            </div>
+
+            <div class="stat-card">
+                <h3>Minimax Clásico</h3>
+                <p>Nodos explorados:</p>
+                <span id="nodes-minimax" class="counter">0</span>
+            </div>
+
+            <div class="stat-card highlight">
+                <h3>Minimax con Alfa-Beta</h3>
+                <p>Nodos explorados:</p>
+                <span id="nodes-alphabeta" class="counter">0</span>
+            </div>
+            
+            <p class="info-text">Profundidad máxima de búsqueda: <strong>4 niveles</strong></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+:root {
+    --bg-color: #1e1e2f;
+    --text-light: #f5f6fa;
+    --board-bg: #2f3640;
+    --cell-bg: #353b48;
+    --cell-hover: #4cd137;
+    --player-x: #e84118;
+    --player-o: #00a8ff;
+    --card-bg: #272c35;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    gap: 4rem;
+    max-width: 1000px;
+    width: 90%;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 3rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.game-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 { margin-bottom: 0.5rem; }
+.subtitle { color: #7f8fa6; margin-bottom: 2rem; font-size: 0.9rem; }
+
+/* Tablero 4x4 */
+.board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr); /* Solución: Fuerza a las 4 filas a medir exactamente lo mismo */
+    gap: 8px;
+    background-color: var(--board-bg);
+    padding: 8px;
+    border-radius: 12px;
+    width: 400px;
+    height: 400px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+.cell {
+    background-color: var(--cell-bg);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    line-height: 1; /* Solución: Evita que la caja de texto invisible de la fuente empuje los bordes */
+    overflow: hidden; /* Asegura que nada se desborde visualmente */
+}
+
+.cell:hover { background-color: #404756; }
+.cell:active { transform: scale(0.95); }
+.cell.x { color: var(--player-x); }
+.cell.o { color: var(--player-o); }
+
+.btn {
+    margin-top: 2rem;
+    padding: 12px 24px;
+    background-color: #8c7ae6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn:hover { background-color: #9c88ff; }
+
+/* Sección de Estadísticas */
+.stats-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 300px;
+}
+
+.stats-section h2 {
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #8c7ae6;
+    padding-bottom: 0.5rem;
+}
+
+.status-box {
+    background-color: var(--card-bg);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.stat-card {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    text-align: center;
+    border-left: 4px solid #7f8fa6;
+}
+
+.stat-card.highlight { border-left-color: #4cd137; }
+.stat-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; color: #dcdde1; }
+.stat-card p { font-size: 0.9rem; color: #7f8fa6; margin-bottom: 1rem; }
+.counter { font-size: 2.5rem; font-weight: bold; color: #fbc531; }
+.info-text { margin-top: 1rem; font-size: 0.85rem; color: #7f8fa6; text-align: center; }
+
+/* Adaptabilidad para pantallas más pequeñas */
+@media (max-width: 850px) {
+    .container { flex-direction: column; align-items: center; gap: 2rem; }
+    .stats-section { width: 100%; max-width: 400px; }
+}
