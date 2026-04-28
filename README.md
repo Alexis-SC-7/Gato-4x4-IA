@@ -1,4 +1,4 @@
-# Gato 4x4 Inteligente - Minimax con Poda Alfa-Beta 🤖🎮
+# Gato 4x4 Inteligente - Minimax con Poda Alfa-Beta
 
 Este repositorio contiene la implementación de un agente inteligente capaz de jugar de manera óptima al juego del Gato (Tres en raya) en un tablero expandido de 4x4. 
 
